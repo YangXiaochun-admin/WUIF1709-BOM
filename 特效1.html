@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>特效</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		outline: none;
+	}
+	.box{
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, .7);
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	section{
+		padding: 15px 75px;
+	}
+	main{
+		width: 450px;
+		height: 300px;
+		background: #fff;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		border-radius: 20px;
+	}
+	lable{
+		display: block;
+		font-size: 16px;
+	}
+	input{
+		width: 300px;
+		height: 40px;
+		outline:none;
+	}
+	input[type='submit']{
+		width: 70px;
+		height: 30px;
+	}
+</style>
+<body>
+	<div class="box">
+		<main>
+			<section>
+				<lable>用户名</lable>
+				<input type="text" placeholder="请输入用户名" name="username" class="username">
+			</section>
+			<section>
+				<lable>密码</lable>
+				<input type="pass" placeholder="请输入密码" name="pass" class="pass">
+			</section>
+			<section>
+				<input type="submit" value="登录" onclick="submit" class="submit">
+			</section>
+		</main>
+	</div>
+</body>
+</html>
+
+<script>
+	let username = document.querySelector('.username');
+	let pass = document.querySelector('.pass');
+	let submit = document.querySelector('.submit');
+
+	submit.onclick = function(){
+		if(username.value.trim() == 'admin' && pass.value.trim()== '111111'){
+			alert('登陆成功');
+		}else{
+			location.replace('特效2.html');
+		}
+	}
+</script>

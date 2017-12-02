@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>特效</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		outline: none;
+	}
+	.box{
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, .7);
+		position: relative;
+	}
+	main{
+		width: 450px;
+		height: 300px;
+		background: #fff;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		border-radius: 20px;
+	}
+	h1{
+		text-align: center;
+		margin-top: 20px;
+	}
+	p{
+		text-align: center;
+		margin-top: 40px;
+		font-size: 12px;
+	}
+	span{
+		color: red;
+		font-weight: 600;
+	}
+	input{
+		width: 100px;
+		height: 30px;
+		margin-left: 150px;
+		margin-top: 40px;
+	}
+</style>
+<body>
+	<div class="box">
+		<main>
+			<h1>错误提示</h1>
+			<p><span>5</span>s后返回登录页</p>
+			<input type="submit" value="返回登录页" onclick="submit" class="submit">
+		</main>
+	</div>
+</body>
+</html>
+
+<script>
+	let span = document.querySelector('span');
+	let submit = document.querySelector('.submit');
+	let num = 5;
+	var t = setInterval(function(){
+		span.innerText = num;
+		num--;
+		if(num < 0){
+			clearInterval(t);
+			location.replace('login.html');
+		}
+	},1000);
+	submit.onclick = function(){
+		location.replace('特效1.html');
+	}
+</script>
