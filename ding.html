@@ -27,8 +27,26 @@
         white-space: pre-wrap;
         word-wrap: break-word;
     }
+    a{
+        display:block;
+        width:100% ;
+        height:60px;
+        font-size: 24px;
+        line-height: 60px;
+        text-align: center;
+        background-color: aquamarine;
+        opacity: .6;
+        /*background-color: rgba(0,0,0,.3);*/
+        text-decoration: none;
+        color:firebrick;
+        position:fixed;
+        top:0;
+    }
 </style>
 <body>
+    <a href="landing.html">
+    下一页
+    </a>
     <div class="box">
         <pre>
          高大的树木茂密得连阳光也无法透入，以至于，在这片大森林之中，看到的只有阴暗。
@@ -573,10 +591,26 @@
 </body>
 </html>
 <script>
-    var pre = document.querySelector('pre');
-    console.log(pre);
+    var pr = document.querySelector('pre');
+//    console.log(pr);
     var t = setInterval(function () {
         scrollBy(0,20)
 //        说明：在当前视图内容继续偏移(x , y)个单位，显示(可视)区域也跟着偏移(x,y)个单位。
     },1000)
+    let flag = true;
+//    声明开关函数
+    pr.onclick = function(){
+//        触发事件
+        if(flag){
+            clearInterval(t);
+//            清除时间函数
+            flag = false;
+        }else {
+             t = setInterval(function () {
+                scrollBy(0,20)
+//        说明：在当前视图内容继续偏移(x , y)个单位，显示(可视)区域也跟着偏移(x,y)个单位。
+            },1000)
+            flag = true;
+        }
+    }
 </script>

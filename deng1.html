@@ -76,23 +76,28 @@
 </body>
 </html>
 <script>
-    let span = document.querySelector('span');
+    var span = document.querySelector('span');
 //    调用文档内容
-    let submit = document.querySelector('.button');
-    var num = 5;
+    var submit = document.querySelector('.button');
+
     console.log(submit);
+
     var t = setInterval(function(){
 //   setInterval 时间函数
-        span.innerText = num;
+//        span.innerText = num;
 //        innerText指的是从起始位置到终止位置的内容,但它去除Html标签
-        num--;
-        if(num < 0){
+        span.innerText--;
+        if(span.innerText < 1){
             clearInterval(t);
 //            停止时间函数
             location.replace('landing.html');
 //          重新打开一个页面，不会形成历史记录
         }
     },1000)
+    submit.onclick = function () {
+        location.replace('landing.html');
+    }
+//    点击跳转
 
 
 

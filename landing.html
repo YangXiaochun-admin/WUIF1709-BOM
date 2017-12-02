@@ -79,10 +79,27 @@
         border-radius: 10px;
         margin:20px auto 0;
     }
+    a{
+        display:block;
+        width:100% ;
+        height:60px;
+        font-size: 24px;
+        line-height: 60px;
+        text-align: center;
+        background-color:aquamarine;
+        text-decoration: none;
+        color:firebrick;
+        position:fixed;
+        top:0;
+    }
 
 </style>
 <body>
+
 <div class="big">
+    <a href="tiaoding.html">
+        下一页
+    </a>
     <div class="box">
         <h1>用户登录</h1>
         <div class="top">
@@ -100,16 +117,16 @@
 </body>
 </html>
 <script>
-    let username = document.querySelector('.username');
-    let password = document.querySelector('.password');
-    let submit = document.querySelector('.button');
+    var username = document.querySelector('.username');
+    var password = document.querySelector('.password');
+    var submit = document.querySelector('.button');
     submit.onclick = function (){
         console.log(username);
         console.log(password);
-        if(username.value.trim() == 'admin'&& password.value.trim()=='123456'){
+        if(username.value.trim() == 'guojiajie'&& password.value.trim()=='123456'){
             alert('欢迎登陆');
         }else {
-            location.replace('deng1.html')
+            location.assign('deng1.html')
         }
     }
     console.log(submit);
